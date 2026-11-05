@@ -29,8 +29,8 @@ export default async function Image({
           justifyContent: "flex-end",
           padding: 80,
           background:
-            "radial-gradient(circle at 85% 15%, #5b21b6 0%, #0d0916 55%)",
-          color: "#ede9f6",
+            "radial-gradient(circle at 85% 15%, #3a4a0e 0%, #0b0b0c 55%)",
+          color: "#ffffff",
         }}
       >
         <div
@@ -39,12 +39,12 @@ export default async function Image({
             width: 72,
             height: 72,
             borderRadius: 18,
-            background: "#7c3aed",
+            background: "#c6f432",
             alignItems: "center",
             justifyContent: "center",
             fontSize: 34,
             fontWeight: 700,
-            color: "#fff",
+            color: "#0b0b0c",
             marginBottom: 40,
           }}
         >
@@ -53,7 +53,7 @@ export default async function Image({
         <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: -3 }}>
           {profile.name}
         </div>
-        <div style={{ fontSize: 36, color: "#c4b5fd", marginTop: 12 }}>
+        <div style={{ fontSize: 36, color: "#c6f432", marginTop: 12 }}>
           {dict.meta.title.split("·")[1]?.trim()}
         </div>
       </div>

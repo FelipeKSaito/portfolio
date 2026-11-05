@@ -76,6 +76,7 @@ const pt = {
         name: "Eco Flame Garden",
         url: "https://ecoflamegarden.com.br/",
         domain: "ecoflamegarden.com.br",
+        image: "/projects/eco-flame-garden.webp",
         category: "Móveis para área externa",
         description:
           "Puffs de piscina e jardim, espreguiçadeiras, sofás modulares, lareiras e ombrelones para varandas, jardins e áreas de lazer.",
@@ -91,6 +92,7 @@ const pt = {
         name: "Sofá na Caixa",
         url: "https://www.sofanacaixa.com.br/",
         domain: "sofanacaixa.com.br",
+        image: "/projects/sofa-na-caixa.webp",
         category: "Sofás compactados",
         description:
           "Sofás modulares, poltronas e sofás-cama que chegam compactados na caixa e são montados em casa, com entrega para todo o Brasil.",
@@ -105,6 +107,7 @@ const pt = {
         name: "Little Duck",
         url: "https://littleduck.com.br/",
         domain: "littleduck.com.br",
+        image: "/projects/little-duck.webp",
         category: "Móveis infantis",
         description:
           "Móveis e acessórios infantis para deixar o quarto das crianças mais confortável e prático.",
@@ -260,6 +263,7 @@ const en: Dictionary = {
         name: "Eco Flame Garden",
         url: "https://ecoflamegarden.com.br/",
         domain: "ecoflamegarden.com.br",
+        image: "/projects/eco-flame-garden.webp",
         category: "Outdoor furniture",
         description:
           "Pool and garden poufs, sun loungers, modular sofas, fireplaces and umbrellas for patios, gardens and leisure areas.",
@@ -275,6 +279,7 @@ const en: Dictionary = {
         name: "Sofá na Caixa",
         url: "https://www.sofanacaixa.com.br/",
         domain: "sofanacaixa.com.br",
+        image: "/projects/sofa-na-caixa.webp",
         category: "Sofas in a box",
         description:
           "Modular sofas, armchairs and sofa beds that arrive compressed in a box and are assembled at home, shipped across Brazil.",
@@ -289,6 +294,7 @@ const en: Dictionary = {
         name: "Little Duck",
         url: "https://littleduck.com.br/",
         domain: "littleduck.com.br",
+        image: "/projects/little-duck.webp",
         category: "Kids' furniture",
         description:
           "Kids' furniture and accessories that make children's rooms more comfortable and practical.",

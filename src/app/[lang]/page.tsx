@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyEmail } from "@/components/CopyEmail";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { Reveal } from "@/components/Reveal";
 import { ThemeEditor } from "@/components/ThemeEditor";
 import { hasLocale } from "@/i18n/config";
@@ -46,15 +47,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </ul>
           </nav>
 
-          <Link
+          <LanguageSwitch
             href={`/${otherLang}`}
             hrefLang={otherLang === "pt" ? "pt-BR" : "en"}
-            className="lang-switch"
-            aria-label={dict.nav.switchLabel}
-            title={dict.nav.switchLabel}
-          >
-            {dict.nav.switchShort}
-          </Link>
+            label={dict.nav.switchLabel}
+            short={dict.nav.switchShort}
+          />
         </div>
       </header>
 
@@ -118,6 +116,14 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     <p className="project__category">{project.category}</p>
                     <h3 className="project__name">{project.name}</h3>
                     <p className="project__description">{project.description}</p>
+                    <h4 className="project__work-title">
+                      {dict.projects.workLabel}
+                    </h4>
+                    <ul className="tags">
+                      {project.work.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                     <a
                       className="project__link"
                       href={project.url}
@@ -129,26 +135,35 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     </a>
                   </div>
 
-                  <div className="project__side">
-                    {project.image ? (
-                      <Image
-                        className="project__image"
-                        src={project.image}
-                        alt={project.name}
-                        width={1280}
-                        height={800}
-                        sizes="(min-width: 960px) 40vw, 100vw"
-                      />
-                    ) : null}
-                    <h4 className="project__work-title">
-                      {dict.projects.workLabel}
-                    </h4>
-                    <ul className="tags">
-                      {project.work.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  {project.image ? (
+                    <a
+                      className="browser"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    >
+                      <span className="browser__bar">
+                        <span className="browser__dots">
+                          <i />
+                          <i />
+                          <i />
+                        </span>
+                        <span className="browser__url">{project.domain}</span>
+                      </span>
+                      <span className="browser__screen">
+                        <Image
+                          className="browser__image"
+                          src={project.image}
+                          alt=""
+                          width={1280}
+                          height={589}
+                          sizes="(min-width: 900px) 560px, 100vw"
+                        />
+                      </span>
+                    </a>
+                  ) : null}
                 </Reveal>
               ))}
             </ul>
