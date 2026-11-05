@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Felipe Saito · Portfolio
 
-## Getting Started
+Personal portfolio in Portuguese and English, built with Next.js (App Router) and TypeScript.
 
-First, run the development server:
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The root redirects to `/pt` or `/en` based on the browser language.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All text lives in `src/i18n/dictionaries.ts`, with one block per language (`pt` and `en`). Contact links are in `profile` at the top of the same file.
 
-## Learn More
+To show a screenshot on a project, save the image in `public/projects/` and set `image: "/projects/<file>.png"` on that project in both languages.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/[lang]/` — layout, page and Open Graph image for each language
+- `src/components/` — theme editor mock (hero), scroll reveal, copy email button
+- `src/proxy.ts` — redirects `/` to the visitor's language
+- `src/app/globals.css` — design tokens and all styles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying on Vercel
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this repository to GitHub.
+2. On vercel.com, choose **Add New → Project**, import the repository and keep the defaults (Next.js is detected automatically).
+3. Every push to `main` deploys a new version.
